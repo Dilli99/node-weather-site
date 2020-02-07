@@ -1,26 +1,26 @@
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
-const messageOne = document.querySelector("#message-1");
-const messageTwo = document.querySelector("#message-2");
+const locationBox = document.querySelector(".location");
+const weather = document.querySelector(".weather");
 
 weatherForm.addEventListener("submit", e => {
   e.preventDefault();
 
   const location = search.value;
 
-  messageOne.textContent = "Loading...";
-  messageTwo.textContent = "";
+  locationBox.textContent = "Loading...";
+  weather.textContent = "";
 
   if (!location) {
-    messageOne.textContent = "You must enter a location to get weather";
+    locationBox.textContent = "You must enter a location to get weather";
   } else {
     fetch("/weather?address=" + location).then(res => {
       res.json().then(data => {
         if (data.error) {
-          messageOne.textContent = data.error;
+          locationBox.textContent = data.error;
         } else {
-          messageOne.textContent = data.location;
-          messageTwo.textContent = data.forecast;
+          locationBox.textContent = data.location;
+          weather.textContent = data.forecast;
         }
       });
     });

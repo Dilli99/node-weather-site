@@ -7,7 +7,7 @@ body {
   font-family: "montserrat", sans-serif;
 }
 #app {
-  background-image: url("../img/cool-background.png");
+  background-image: url("./assets/cold-bg.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;

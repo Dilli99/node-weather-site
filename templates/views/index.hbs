@@ -8,14 +8,24 @@
 </head>
 
 <body>
-    <div class="main-content">
-        {{>header}}
-        <form>
-            <input placeholder="Location">
-            <button>Search</button>
-        </form>
-        <p id="message-1"></p>
-        <p id="message-2"></p>
+    <div id="app">
+        <main>
+
+            {{>header}}
+            <form>
+                <div class="search-box">
+                    <input class="search-bar" placeholder="Location">
+                </div>
+            </form>
+            <div class="location-box">
+                <div class='location'></div>
+            </div><br>
+            <div class="weather-box">
+                <div class="weather">
+                </div>
+            </div>
+
+        </main>
     </div>
 </body>
 
