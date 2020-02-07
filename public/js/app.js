@@ -12,7 +12,7 @@ weatherForm.addEventListener("submit", e => {
   messageTwo.textContent = "";
 
   if (!location) {
-    console.log("You must enter a location to get weather");
+    messageOne.textContent = "You must enter a location to get weather";
   } else {
     fetch("/weather?address=" + location).then(res => {
       res.json().then(data => {
@@ -20,7 +20,7 @@ weatherForm.addEventListener("submit", e => {
           messageOne.textContent = data.error;
         } else {
           messageOne.textContent = data.location;
-          messageOne.textContent = data.forecast;
+          messageTwo.textContent = data.forecast;
         }
       });
     });
